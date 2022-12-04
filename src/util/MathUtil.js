@@ -25,4 +25,23 @@ export default class MathUtil {
   static isEven(number) {
     return number % 2 === 0;
   }
+
+  /**
+   * Finds the greatest common divisor of two numbers.
+   *
+   * @param {!number} a
+   * @param {!number} b
+   */
+  static findGCD(a, b) {
+    let count = Math.min(a, b);
+
+    for (let n = count; n >= 1; n -= 1) {
+      if (a % n === 0 && b % n === 0) {
+        count = n;
+        break;
+      }
+    }
+
+    return count;
+  }
 }

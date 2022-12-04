@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/danielvinogradov/fullstack-javascript-project-44/workflows/hexlet-check/badge.svg)](https://github.com/danielvinogradov/fullstack-javascript-project-44/actions)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

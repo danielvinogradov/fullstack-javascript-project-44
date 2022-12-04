@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/danielvinogradov/fullstack-javascript-project-44.git"
   },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "author": "Danil Vinogradov",
   "license": "ISC",
   "bugs": {

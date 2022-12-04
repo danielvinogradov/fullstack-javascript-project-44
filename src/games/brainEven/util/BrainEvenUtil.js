@@ -1,4 +1,4 @@
-import IsEvenAnswer from '../enum/IsEvenAnswer.js';
+import BooleanAnswer from '../../../enum/BooleanAnswer.js';
 import MathUtil from '../../../util/MathUtil.js';
 
 export default class BrainEvenUtil {
@@ -12,8 +12,8 @@ export default class BrainEvenUtil {
    */
   static defineCorrectAnswer({
     number,
-    isEvenAnswer = IsEvenAnswer.Yes,
-    isOddAnswer = IsEvenAnswer.No,
+    isEvenAnswer = BooleanAnswer.Yes,
+    isOddAnswer = BooleanAnswer.No,
   }) {
     return MathUtil.isEven(number) ? isEvenAnswer : isOddAnswer;
   }

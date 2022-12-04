@@ -1,4 +1,4 @@
-import UserProvidedAnswerType from '../games/brainEven/enum/UserProvidedAnswerType.js';
+import UserProvidedAnswerType from '../enum/UserProvidedAnswerType.js';
 
 export default class RoundResult {
   #userAnswerType;

@@ -44,4 +44,24 @@ export default class MathUtil {
 
     return count;
   }
+
+  /**
+   * Checks if the number is prime.
+   *
+   * @param {!number} number
+   * @returns {!boolean}
+   */
+  static isPrime(number) {
+    if (number < 2) return false;
+
+    let isPrime = true;
+    for (let i = 2; i < number / 2; i += 1) {
+      if (number % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    return isPrime;
+  }
 }

@@ -1,9 +1,9 @@
 /**
  * Enum with possible answers to Brain Even Game questions;
  */
-const IsEvenAnswer = {
+const BooleanAnswer = {
   Yes: 'yes',
   No: 'no',
 };
 
-export default IsEvenAnswer;
+export default BooleanAnswer;

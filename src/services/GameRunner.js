@@ -1,7 +1,7 @@
 import defaultCli from '../cli.js';
 import CliUtil from '../util/CliUtil.js';
 import MessageService from './MessageService.js';
-import UserProvidedAnswerType from '../games/brainEven/enum/UserProvidedAnswerType.js';
+import UserProvidedAnswerType from '../enum/UserProvidedAnswerType.js';
 import DefaultBrainGamesConfig from '../config/DefaultBrainGamesConfig.js';
 
 export default class GameRunner {

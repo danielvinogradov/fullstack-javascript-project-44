@@ -55,7 +55,7 @@ export default class MathUtil {
     if (number < 2) return false;
 
     let isPrime = true;
-    for (let i = 2; i < number / 2; i += 1) {
+    for (let i = 2; i <= number / 2; i += 1) {
       if (number % i === 0) {
         isPrime = false;
         break;

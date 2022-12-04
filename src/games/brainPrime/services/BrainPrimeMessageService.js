@@ -5,6 +5,6 @@ export default class BrainPrimeMessageService {
     isEvenAnswerValue = BooleanAnswer.Yes,
     isOddAnswerValue = BooleanAnswer.No,
   ) {
-    return `Answer "${isEvenAnswerValue}" if the number is prime, otherwise answer "${isOddAnswerValue}".`;
+    return `Answer "${isEvenAnswerValue}" if the given number is prime. Otherwise answer "${isOddAnswerValue}".`;
   }
 }

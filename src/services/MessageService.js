@@ -1,6 +1,6 @@
 export default class MessageService {
-  static getQuestionMessage(number) {
-    return `Question: ${number}`;
+  static getQuestionMessage(question) {
+    return `Question: ${question}`;
   }
 
   static getAnswerMessage() {

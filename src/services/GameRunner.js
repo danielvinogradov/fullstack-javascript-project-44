@@ -14,8 +14,14 @@ export default class GameRunner {
   #cli;
 
   /**
+   * @callback playRound
+   * @param ioService
+   * @param messageService
+   * @returns RoundResult
+   *
    * @typedef Game
-   * @property {() => UserProvidedAnswerType} playRound
+   * @property {() => void} printRules
+   * @property {playRound} playRound
    */
   #game;
 

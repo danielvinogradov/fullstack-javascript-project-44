@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 import BrainGCD from '../src/games/brainGCD/BrainGCD.js';
 import BrainGCDMessageService from '../src/games/brainGCD/services/BrainGCDMessageService.js';
 import BrainGCDDefaultConfig from '../src/games/brainGCD/config/BrainGCDDefaultConfig.js';

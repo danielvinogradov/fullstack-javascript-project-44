@@ -1,8 +1,10 @@
 #!/usr/bin/env node
-import CliUtil from '../src/util/CliUtil.js';
-import CONFIG from '../src/games/brainEven/config/BrainEvenDefaultConfig.js';
-import cli from '../src/cli.js';
+import GameRunner from '../src/services/GameRunner.js';
 import BrainEven from '../src/games/brainEven/BrainEven.js';
 import BrainEvenMessageService from '../src/games/brainEven/services/BrainEvenMessageService.js';
+import BrainEvenDefaultConfig from '../src/games/brainEven/config/BrainEvenDefaultConfig.js';
 
-new BrainEven(cli, CliUtil, BrainEvenMessageService, CONFIG).run();
+const game = new BrainEven(BrainEvenMessageService, BrainEvenDefaultConfig);
+const gameRunner = new GameRunner(game);
+
+gameRunner.run();

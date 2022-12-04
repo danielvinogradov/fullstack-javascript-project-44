@@ -1,7 +1,7 @@
 /**
- * Default config for Brain Even Game.
+ * Default config for Brain Calc Game.
  */
-const BrainEvenDefaultConfig = Object.freeze({
+const BrainCalcDefaultConfig = Object.freeze({
   /**
    * Minimum number that can be generated (inclusive).
    */
@@ -13,4 +13,4 @@ const BrainEvenDefaultConfig = Object.freeze({
   MAX_GENERATED_NUMBER: 100,
 });
 
-export default BrainEvenDefaultConfig;
+export default BrainCalcDefaultConfig;

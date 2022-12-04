@@ -1,15 +1,15 @@
 import readlineSync from 'readline-sync';
 
 function printWelcomeMessage() {
-    console.log('Welcome to the Brain Games!');
+  console.log('Welcome to the Brain Games!');
 }
 
 function greetUser() {
-    const name = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${name}!`);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
 }
 
-export function run() {
-    printWelcomeMessage();
-    greetUser();
+export default function run() {
+  printWelcomeMessage();
+  greetUser();
 }

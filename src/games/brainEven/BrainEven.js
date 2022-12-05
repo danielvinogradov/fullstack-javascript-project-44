@@ -2,64 +2,44 @@ import BrainEvenUtil from './util/BrainEvenUtil.js';
 import RoundResult from '../../models/RoundResult.js';
 import MathUtil from '../../util/MathUtil.js';
 
-export default class BrainEven {
-  /**
-   * @callback getWrongAnswerMessageFn
-   * @param {string|number} usersAnswer
-   * @param {string|number} correctAnswer
-   * @param {string} username
-   *
-   * @typedef MessageService
-   * @property {() => string} getRulesDescriptionMessage
-   *
-   * @type {MessageService}
-   */
-  #gameMessageService;
+/**
+ * @typedef MessageService
+ * @property {() => string} getRulesDescriptionMessage
+ *
+ * @typedef Config
+ * @property {number} MIN_GENERATED_NUMBER
+ * @property {number} MAX_GENERATED_NUMBER
+ *
+ * @param {!MessageService} gameMessageService
+ * @param {!Config} config
+ */
+function BrainEven(gameMessageService, config) {
+  return Object.freeze({
 
-  /**
-   * @typedef Config
-   * @property {number} MIN_GENERATED_NUMBER
-   * @property {number} MAX_GENERATED_NUMBER
-   *
-   * @type {Config}
-   */
-  #config;
+    printRules(ioService) {
+      ioService.print(gameMessageService.getRulesDescriptionMessage());
+    },
 
-  /**
-     * @param {!MessageService} messageService
-     * @param {!Config} config
-     */
-  constructor(messageService, config) {
-    this.#gameMessageService = messageService;
-    this.#config = config;
-  }
+    playRound(ioService, messageService) {
+      const number = MathUtil.generateRandomNumberInRange(
+        config.MIN_GENERATED_NUMBER,
+        config.MAX_GENERATED_NUMBER,
+      );
+      const correctAnswer = BrainEvenUtil.defineCorrectAnswer({ number });
 
-  printRules(ioService) {
-    ioService.print(this.#gameMessageService.getRulesDescriptionMessage());
-  }
+      ioService.print(messageService.getQuestionMessage(number));
+      const userAnswer = ioService.getUserInputWithQuestion(
+        messageService.getAnswerMessage(),
+      )
+        .trim()
+        .toLowerCase();
 
-  /**
-   * Plays one game round.
-   *
-   * @returns {RoundResult}
-   */
-  playRound(ioService, messageService) {
-    const number = MathUtil.generateRandomNumberInRange(
-      this.#config.MIN_GENERATED_NUMBER,
-      this.#config.MAX_GENERATED_NUMBER,
-    );
-    const correctAnswer = BrainEvenUtil.defineCorrectAnswer({ number });
-
-    ioService.print(messageService.getQuestionMessage(number));
-    const userAnswer = ioService.getUserInputWithQuestion(
-      messageService.getAnswerMessage(),
-    )
-      .trim()
-      .toLowerCase();
-
-    return new RoundResult(
-      userAnswer,
-      correctAnswer,
-    );
-  }
+      return new RoundResult(
+        userAnswer,
+        correctAnswer,
+      );
+    },
+  });
 }
+
+export default BrainEven;

@@ -1,7 +1,7 @@
 import BooleanAnswer from '../../../enum/BooleanAnswer.js';
 import MathUtil from '../../../util/MathUtil.js';
 
-export default class BrainEvenUtil {
+const BrainEvenUtil = Object.freeze({
   /**
    * Provides a correct answer based on provided number.
    *
@@ -10,11 +10,13 @@ export default class BrainEvenUtil {
    * @param {!string} isOddAnswer
    * @returns {!string}
    */
-  static defineCorrectAnswer({
+  defineCorrectAnswer({
     number,
     isEvenAnswer = BooleanAnswer.Yes,
     isOddAnswer = BooleanAnswer.No,
   }) {
     return MathUtil.isEven(number) ? isEvenAnswer : isOddAnswer;
-  }
-}
+  },
+});
+
+export default BrainEvenUtil;

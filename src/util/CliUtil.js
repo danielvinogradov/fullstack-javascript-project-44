@@ -1,11 +1,25 @@
 import readlineSync from 'readline-sync';
 
-export default class CliUtil {
-  static print(value) {
+const CliUtil = Object.freeze({
+  /**
+   * Prints value to console.
+   *
+   * @param {string} value
+   * @returns {void}
+   */
+  print(value) {
     console.log(value);
-  }
+  },
 
-  static getUserInputWithQuestion(question) {
+  /**
+   * Prints a question to console and waits for user input. Returns this input.
+   *
+   * @param {string} question
+   * @returns {string}
+   */
+  getUserInputWithQuestion(question) {
     return readlineSync.question(question);
-  }
-}
+  },
+});
+
+export default CliUtil;

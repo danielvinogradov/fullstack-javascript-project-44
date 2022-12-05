@@ -1,21 +1,23 @@
-export default class MessageService {
-  static getQuestionMessage(question) {
+const MessageService = Object.freeze({
+  getQuestionMessage(question) {
     return `Question: ${question}`;
-  }
+  },
 
-  static getAnswerMessage() {
+  getAnswerMessage() {
     return 'Your answer: ';
-  }
+  },
 
-  static getWrongAnswerMessage(usersAnswer, correctAnswer, username) {
+  getWrongAnswerMessage(usersAnswer, correctAnswer, username) {
     return `'${usersAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${username}!`;
-  }
+  },
 
-  static getCorrectAnswerMessage() {
+  getCorrectAnswerMessage() {
     return 'Correct!';
-  }
+  },
 
-  static getWinMessage(username) {
+  getWinMessage(username) {
     return `Congratulations, ${username}!`;
-  }
-}
+  },
+});
+
+export default MessageService;

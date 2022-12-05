@@ -1,13 +1,13 @@
 import Operation from '../enum/Operation.js';
 
-export default class BrainCalcUtil {
+const BrainCalcUtil = Object.freeze({
   /**
    *
    * @param {!number} a
    * @param {!number} b
    * @param {!Operation} operation
    */
-  static defineCorrectAnswer(a, b, operation) {
+  defineCorrectAnswer(a, b, operation) {
     switch (operation) {
       case Operation.Summation:
         return a + b;
@@ -18,5 +18,7 @@ export default class BrainCalcUtil {
       default:
         throw new Error('Operation is not supported!');
     }
-  }
-}
+  },
+});
+
+export default BrainCalcUtil;

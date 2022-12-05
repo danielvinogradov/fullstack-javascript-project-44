@@ -1,4 +1,4 @@
-export default class MathUtil {
+const MathUtil = Object.freeze({
   /**
    * Generates a random integer. The maximum is exclusive and the minimum is inclusive.
    *
@@ -10,11 +10,11 @@ export default class MathUtil {
    *     Generating random ints between values on MDN
    * </a>
    */
-  static generateRandomNumberInRange(minNumInclusive, maxNumExclusive) {
+  generateRandomNumberInRange(minNumInclusive, maxNumExclusive) {
     const min = Math.ceil(minNumInclusive);
     const max = Math.floor(maxNumExclusive);
     return Math.floor(Math.random() * (max - min) + min);
-  }
+  },
 
   /**
    * Checks if a provided number is even.
@@ -22,9 +22,9 @@ export default class MathUtil {
    * @param {!number} number
    * @returns {!boolean}
    */
-  static isEven(number) {
+  isEven(number) {
     return number % 2 === 0;
-  }
+  },
 
   /**
    * Finds the greatest common divisor of two numbers.
@@ -32,7 +32,7 @@ export default class MathUtil {
    * @param {!number} a
    * @param {!number} b
    */
-  static findGCD(a, b) {
+  findGCD(a, b) {
     let count = Math.min(a, b);
 
     for (let n = count; n >= 1; n -= 1) {
@@ -43,7 +43,7 @@ export default class MathUtil {
     }
 
     return count;
-  }
+  },
 
   /**
    * Checks if the number is prime.
@@ -51,7 +51,7 @@ export default class MathUtil {
    * @param {!number} number
    * @returns {!boolean}
    */
-  static isPrime(number) {
+  isPrime(number) {
     if (number < 2) return false;
 
     let isPrime = true;
@@ -63,5 +63,7 @@ export default class MathUtil {
     }
 
     return isPrime;
-  }
-}
+  },
+});
+
+export default MathUtil;
